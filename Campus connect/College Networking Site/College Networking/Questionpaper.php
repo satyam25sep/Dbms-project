@@ -36,7 +36,7 @@
 COPYRIGHT
 Do not change or remove the reference to DatingSiteBuilder if you use the free version
 -->
-<div class=foot>Copyright &copy; 2011. All Rights Reserved. </div>
+<div class=foot>College Networking </div>
 <center>
 
 </body>

@@ -12,7 +12,7 @@ include("friends.php");
 <?php
  include("head.php");
 include("menu.php"); 
-$result = mysql_query("SELECT * FROM qpaper");
+$result = mysqli_query($con,"SELECT * FROM qpaper");
 
 ?>
 

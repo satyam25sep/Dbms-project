@@ -1,14 +1,14 @@
 <?php
 include("header.php");
 include("mysql.php");
-$result = mysql_query("SELECT * FROM profile ORDER BY RAND()
+$result = mysqli_query($con,"SELECT * FROM profile ORDER BY RAND()
 ");
 if(isset($_SESSION["logid"]))
 {
 	header("Location: profile.php");
 }
 $i=0;
-while($row = mysql_fetch_array($result))
+while($row = mysqli_fetch_array($result))
   {
 $img[$i] = $row["image"];
 $uid[$i] = $row["userid"];
@@ -109,7 +109,16 @@ $i++;
 			alert("Email Id should not end with number or symbol");
 			return false;  
 		}
-		
+		<?php
+$con = mysqli_connect("localhost","root","","collegenetworking");
+if (!$con)
+  {
+  die('Could not connect: ' . mysqli_error());
+  }
+
+mysqli_select_db("collegenetworking", $con);
+?>
+
 	else if(document.registration.pass.value=="")
 	{
 		alert("Please enter password");
@@ -160,7 +169,7 @@ $i++;
 	
 <?php
 include("mysql.php");
-$result1 = mysql_query("SELECT * FROM college");
+$result1 = mysqli_query($con,"SELECT * FROM college");
 
 if(isset($_POST["button2"]))
 {
@@ -169,9 +178,9 @@ $sql="INSERT INTO stuacc (firstname,lastname,email,password,confirmpassword,iam,
 VALUES
 ('$_POST[fname]','$_POST[lname]','$_POST[email]','$_POST[pass]','$_POST[cpass]','$_POST[gen]','$datee')";
 
-if (!mysql_query($sql,$con))
+if (!mysqli_query($con,$sql))
   {
-  die('Error: ' . mysql_error());
+  die('Error: ' . mysqli_error());
   }
   else
   {
@@ -194,19 +203,11 @@ header("Location: login.php");
 <!-- body  content -->
 <table cellpadding=10 width=100%>
 <tr>
-	<td width="70%">
-		<img src="images/pic.png" width="518" height="137" border="0" alt="">
-		<h2>Meet New Friends </h2>
-
+	<td width="">
+		
 		<table width=100%>
-        
-		<tr valign=top align=center>
-			<td><a href=""><img src="<?php echo $img[0] ; ?>" width="100" height="150" border="0" alt=""></a><br></td>
-			<td><a href=""><img src="<?php echo $img[1] ; ?>" width="100" height="150" border="0" alt=""></a><br></td>
-			<td><a href=""><img src="<?php echo $img[2] ; ?>" width="100" height="150" border="0" alt=""></a><br></td>
-			<td><a href=""><img src="<?php echo $img[3] ; ?>" width="100" height="150" border="0" alt=""></a><br></td>
-       
-		</tr>
+
+
 		</table>
 
 		<h2>About Us</h2>		

@@ -1,4 +1,4 @@
-<div class=foot>Copyright &copy; 2011. All Rights Reserved. </div>
+<div class=foot>CollegeNetworking </div>
 </div>
 <center>
 

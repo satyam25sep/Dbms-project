@@ -1,9 +1,9 @@
 <?php
 include_once("mysql.php");
 
-$profilerec = mysql_query("SELECT * FROM stuacc WHERE email ='$_SESSION[logid]'");
+$profilerec = mysqli_query("SELECT * FROM stuacc WHERE email ='$_SESSION[logid]'");
 
-while($row = mysql_fetch_array($profilerec))
+while($row = mysqli_fetch_array($profilerec))
   {
 $usid  = $row["id"];
 $fname = $row["firstname"];
@@ -11,9 +11,9 @@ $lname = $row["lastname"];
 $gend = $row["iam"];
   }
   $_SESSION["iduser"] = $usid;
-$profilerec = mysql_query("SELECT * FROM profile WHERE userid ='$usid' ");
+$profilerec = mysqli_query("SELECT * FROM profile WHERE userid ='$usid' ");
 
-while($row = mysql_fetch_array($profilerec))
+while($row = mysqli_fetch_array($profilerec))
   {
 
 $relationship= $row["relstat"]; 	

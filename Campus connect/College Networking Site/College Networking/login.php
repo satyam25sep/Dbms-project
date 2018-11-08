@@ -7,9 +7,9 @@ if(isset($_SESSION["logid"]))
 }
 if(isset($_POST["logiin"]))
 {
-	$logres = mysql_query("SELECT * FROM stuacc WHERE email='$_POST[username]' AND password='$_POST[pass]' ");
+	$logres = mysqli_query("SELECT * FROM stuacc WHERE email='$_POST[username]' AND password='$_POST[pass]' ");
 
-	if(mysql_num_rows($logres) == 1)
+	if(mysqli_num_rows($logres) == 1)
 	{
 	$_SESSION["logid"] = $_POST["username"];
 	header("Location: profile.php");

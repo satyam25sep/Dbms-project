@@ -1,9 +1,9 @@
 <?php
-$con = mysql_connect("localhost","root","");
+$con = mysqli_connect("localhost","root","","collegenetworking");
 if (!$con)
   {
-  die('Could not connect: ' . mysql_error());
+  die('Could not connect: ' . mysqli_error());
   }
 
-mysql_select_db("collegenetworking", $con);
+mysqli_select_db($con,"collegenetworking");
 ?>
