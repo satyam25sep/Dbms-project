@@ -1,9 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-<title>Social Networking Template</title>
-<meta name="Keywords" content="">
-<meta name="Description" content="">
+<title>Upload Question Paper</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -32,11 +30,7 @@
 
 </div>
 
-<!--  
-COPYRIGHT
-Do not change or remove the reference to DatingSiteBuilder if you use the free version
--->
-<div class=foot>College Networking </div>
+<div class=foot>Created By Dheeraj Yadav </div>
 <center>
 
 </body>
